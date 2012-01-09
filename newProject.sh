@@ -46,3 +46,5 @@ clean:
 	rm main *.6 results
 EOF_MAKE
 
+git add $GOFILE
+git add $MAKEFILE
