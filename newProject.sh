@@ -48,3 +48,5 @@ EOF_MAKE
 
 git add $GOFILE
 git add $MAKEFILE
+
+$EDITOR $GOFILE
