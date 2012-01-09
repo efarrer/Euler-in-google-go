@@ -10,7 +10,8 @@ fi
 
 
 DIR="Euler${PROBLEM}"
-FILE="${DIR}/main.go"
+MAKEFILE="${DIR}/Makefile"
+GOFILE="${DIR}/main.go"
 
 if [ -d "$DIR" ]; then
     echo "Problem already exists"
@@ -19,7 +20,7 @@ fi
 
 mkdir $DIR
 
-cat >$FILE <<EOF
+cat >$GOFILE <<EOF_GO
 package main
 
 import "fmt"
@@ -27,7 +28,21 @@ import "fmt"
 func main() {
     fmt.Printf("TODO $PROBLEM")
 }
-EOF
+EOF_GO
 
-gofmt -w=true $FILE
+gofmt -w=true $GOFILE
+
+cat >$MAKEFILE <<EOF_MAKE
+results: main
+	./main > results
+
+main: main.6
+	6l -o main *.6
+
+main.6: main.go
+	gofmt -w=true *.go && 6g *.go
+
+clean:
+	rm main *.6 results
+EOF_MAKE
 
