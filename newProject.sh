@@ -24,8 +24,11 @@ cat >$GOFILE <<EOF_GO
 package main
 
 import "fmt"
+import "runtime"
 
 func main() {
+    runtime.GOMAXPROCS(1)
+
     fmt.Printf("TODO $PROBLEM")
 }
 EOF_GO
