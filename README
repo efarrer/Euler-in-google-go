@@ -1,0 +1,8 @@
+Solutions to the project Euler problems in Google Go.
+
+These solutions are optimized for the following:
+    1. Fun
+    2. Developer time
+
+They are not the most CPU or memory efficient, nor are they necessarily idiomatic
+go. This is a pastime, nothing else.
