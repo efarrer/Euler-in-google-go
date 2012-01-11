@@ -1,6 +1,6 @@
 #!/bin/bash -e
 
-PROBLEM="$1"
+PROBLEM=$(printf "%03d" "$1")
 
 if [ "" = "$1" ]; then
     echo "Usage $0 <problem_number>"
