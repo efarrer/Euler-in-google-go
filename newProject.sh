@@ -37,7 +37,7 @@ gofmt -w=true $GOFILE
 
 cat >$MAKEFILE <<EOF_MAKE
 results: main
-	./main > results
+	\time -f "%e" -o time ./main > results 2> stderr
 
 main: main.go
 	gofmt -w=true *.go && go build *.go
