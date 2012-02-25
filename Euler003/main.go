@@ -12,7 +12,7 @@ func main() {
 		// Make sure it divides
 		if 0 == (number % factor) {
 			// Make sure it's prime
-			if big.ProbablyPrime(big.NewInt(factor), 10000) {
+			if big.NewInt(factor).ProbablyPrime(10000) {
 				fmt.Printf("%v", factor)
 				return
 			}
