@@ -2,12 +2,7 @@
 
 for dir in $(ls); do
     if [ -d "$dir" ]; then
-        before=$(date +"%s")
         make -C "$dir" > /dev/null
-        after=$(date +"%s")
-        if [ ! -e "${dir}/time" ]; then
-            echo "${after}-${before}" | bc > "${dir}/time"
-        fi
         ANSWER=$(cat "${dir}/results")
         echo "${dir}: $ANSWER"
         COUNT=$(echo "$dir" | sed 's/Euler//')

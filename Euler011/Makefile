@@ -1,5 +1,5 @@
 results: main
-	./main > results
+	\time -f "%e" -o time ./main > results
 
 main: main.go
 	gofmt -w=true *.go && go build *.go
