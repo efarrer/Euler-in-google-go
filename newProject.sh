@@ -49,4 +49,4 @@ EOF_MAKE
 git add $GOFILE
 git add $MAKEFILE
 
-$EDITOR $GOFILE
+cd $DIR; $EDITOR main.go
